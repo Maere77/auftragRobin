@@ -1,0 +1,157 @@
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Container styling */
+.container {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 40px 60px;
+    border-radius: 20px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(15px);
+    animation: fadeIn 2s ease-in-out;
+}
+
+/* Title styling */
+.title {
+    font-size: 3rem;
+    margin-bottom: 30px;
+    position: relative;
+    animation: slideIn 1s ease-out;
+}
+
+.titleFancy {
+    display: inline-block;
+    color: #ffcc00;
+    font-weight: bold;
+    background: linear-gradient(135deg, #ffcc00 30%, #ff9900 70%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+}
+
+.titleFancy::before, .titleFancy::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    border: 3px solid rgba(255, 204, 0, 0.6);
+    top: 0;
+    left: 0;
+    z-index: -1;
+    animation: shine 2s infinite;
+}
+
+.titleFancy::before {
+    filter: blur(15px);
+}
+
+.titleFancy::after {
+    filter: blur(5px);
+}
+
+/* Navigation styling */
+.navi {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Link styling */
+.linke {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5rem;
+    padding: 12px 24px;
+    border-radius: 30px;
+    transition: background 0.3s, transform 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.linke::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.3);
+    transition: left 0.3s;
+    border-radius: 30px;
+}
+
+.linke:hover::before {
+    left: 0;
+}
+
+.linke:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.1);
+}
+
+/* Animation keyframes */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes shine {
+    0% {
+        left: -100%;
+    }
+    50% {
+        left: 100%;
+    }
+    100% {
+        left: -100%;
+    }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .title {
+        font-size: 2rem;
+    }
+
+    .navi {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .linke {
+        font-size: 1.2rem;
+    }
+}
