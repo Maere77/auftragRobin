@@ -12,6 +12,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/matches")
+@CrossOrigin("*")
 public class APIMatchController {
 
     @Autowired

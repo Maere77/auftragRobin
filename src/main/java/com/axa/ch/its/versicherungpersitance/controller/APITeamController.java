@@ -12,6 +12,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/teams")
+@CrossOrigin("*")
 public class APITeamController {
 
     @Autowired

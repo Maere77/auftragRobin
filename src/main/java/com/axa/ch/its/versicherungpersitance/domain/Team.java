@@ -24,6 +24,7 @@ public class Team {
     @ManyToOne
     private Group groupp;
 
+    @JsonIgnoreProperties("team")
     @OneToMany(mappedBy = "team")
     private Set<Player> players = new HashSet<>();
 

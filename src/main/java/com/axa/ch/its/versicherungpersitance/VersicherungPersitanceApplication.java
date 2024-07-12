@@ -13,5 +13,4 @@ public class VersicherungPersitanceApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(VersicherungPersitanceApplication.class, args);
 	}
-
 }

@@ -13,6 +13,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/groups")
+@CrossOrigin("*")
 public class APIGroupController {
 
     @Autowired

@@ -1,5 +1,7 @@
 package com.axa.ch.its.versicherungpersitance.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 
@@ -18,6 +20,7 @@ public class Group {
     @NotNull
     private String groupName;
 
+    @JsonIgnoreProperties("players")
     @OneToMany(mappedBy = "groupp")
     private Set<Team> teams = new HashSet<>();
 

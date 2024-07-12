@@ -12,6 +12,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/stadiums")
+@CrossOrigin("*")
 public class APIStadiumController {
 
     @Autowired
